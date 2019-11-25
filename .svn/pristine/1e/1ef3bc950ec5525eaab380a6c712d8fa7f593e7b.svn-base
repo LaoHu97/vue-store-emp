@@ -1,0 +1,50 @@
+import instance from './index';
+
+const base = '';
+const downloadPath = process.env.API_DOWNLOAD || '';
+
+export const requestLogin = params => { return instance.post(`${base}/admin/wp/store/loginStoreVerify`, params).then(res => res.data); };
+
+//验证码
+export const getCode = `${base}/admin/wp/comm/getCode`;
+
+ export const getUserList = params => { return instance.post(`${base}/admin/wp/store/querySumEmp`, params).then(res => res.data);};
+//
+ export const getUserListPage = params => { return instance.post(`${base}/admin/wp/store/storeOrderShop`,params).then(res => res.data); };
+//
+ export const modifyPassword= params => { return instance.post(`${base}/admin/wp/store/updateStoreMpwd`, params).then(res => res.data); };
+//
+ export const batchRemoveUser = params => { return instance.post(`${base}/admin/wp/store/loginStoreOut`, params).then(res => res.data); };
+//
+ export const lookupUser = params => { return instance.post(`${base}/admin/wp/comm/selectEmpList`,params).then(res => res.data); };
+
+ export const printSettle = params => { return instance.post(`${base}/admin/wp/store/printSettle`,params).then(res => res.data); };
+
+export const queryStrStatement = params => { return instance.post(`${base}/admin/wp/store/queryStrStatement`,params).then(res => res.data); };
+
+export const selectMersByName = params => { return instance.post(`${base}/admin/wp/comm/selectMersByName`,params).then(res => res.data); };
+//会员交易查询
+export const queryMemTrans = params => { return instance.post(`${base}/admin/wp/store/queryMemTrans`,params).then(res => res.data); };
+
+ //退款
+ export const storeRefund = params => { return instance.post(`${base}/admin/wp/store/storeRefund`,params).then(res => res.data); };
+ //补发打印
+ export const supplyPrint = params => { return instance.post(`${base}/admin/wp/store/supplyPrint`,params).then(res => res.data); };
+
+export const queryActivePurBySid = params => { return instance.post(`${base}/admin/wp/store/queryActivePurBySid`,params).then(res => res.data); };
+
+// export const downOrderExcelNew = params => { return instance.get(`${downloadPath}/download/store/downOrderExcelNew`,{ params: params }); };
+//订单详情
+export const queryOrderDetail = params => { return instance.post(`${base}/admin/wp/store/queryOrderDetail`,params).then(res => res.data); };
+
+export const storeOrderShop = params => { return instance.post(`${downloadPath}/download/store/storeOrderShop`,params).then(res => res.data); };
+
+export const downloadQueryOrderDetail = params => { return instance.post(`${downloadPath}/download/store/queryOrderDetail`,params).then(res => res.data); };
+
+export const downSumDetailExcelBySid = `${base}/admin/wp/store/downSumDetailExcelBySid`;
+
+export const downOrderExcelNew = `${downloadPath}/download/store/downOrderExcelNew`;
+
+export const StoreSendVerCode = params => { return instance.post(`${base}/admin/wp/mer/100/StoreSendVerCode`,params).then(res => res.data); };
+
+export const selectEmpsBySid = params => { return instance.post(`${base}/admin/wp/comm/selectEmpsBySid`,params).then(res => res.data); };
